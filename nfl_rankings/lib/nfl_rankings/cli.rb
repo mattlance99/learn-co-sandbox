@@ -1,3 +1,0 @@
-class NflRankings::CLI
-  
-end
