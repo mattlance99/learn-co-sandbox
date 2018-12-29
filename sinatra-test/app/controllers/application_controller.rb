@@ -11,7 +11,11 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/' do 
-    "hello world"
+    erb :welcome
   end
   
+  post '/sessions' do
+    @me = params[:email]
+    erb :test
+  end
 end
