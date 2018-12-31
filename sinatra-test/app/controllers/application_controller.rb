@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
 	end
 	
 	get '/listings/new' do
-    erb :new_listing
+    erb :new
   end
   
   get '/listings' do
