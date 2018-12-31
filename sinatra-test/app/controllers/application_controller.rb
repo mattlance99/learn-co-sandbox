@@ -22,12 +22,25 @@ class ApplicationController < Sinatra::Base
 		erb :login
 	end
 	
+	get "/logout" do
+		session.clear
+		redirect "/"
+	end
+	
+	get '/listings/new' do
+    erb :new_listing
+  end
+  
+  get '/listings' do
+    @listings = Listing.all
+    erb :index
+  end
+	
 	post "/login" do
 		agent = Agent.find_by(:username => params[:username])
 		if agent && agent.authenticate(params[:password])
 			session[:agent_id] = agent.id
-			"YOU LOGGED IN!!!!!"
-			#redirect "/success"
+			redirect '/listings'
 		else
 		  "YOU FAILED!!!!!"
 			#redirect "failure"
