@@ -18,7 +18,30 @@ class ApplicationController < Sinatra::Base
     erb :signup
   end 
   
-  post '/signup' do
-    "Hello World"
-  end
+  get "/login" do
+		erb :login
+	end
+	
+	post "/login" do
+		agent = Agent.find_by(:username => params[:username])
+		if agent && agent.authenticate(params[:password])
+			session[:agent_id] = agent.id
+			"YOU LOGGED IN!!!!!"
+			#redirect "/success"
+		else
+		  "YOU FAILED!!!!!"
+			#redirect "failure"
+		end
+	end
+  
+	post "/signup" do
+		agent = Agent.new(:username => params[:username], :password => params[:password])
+		if agent.save
+		      erb :login
+			#redirect "/login"
+		else
+		      erb :failure
+			#redirect "/failure"
+		end
+	end
 end
