@@ -7,4 +7,5 @@ require './config/environment'
 #end
 
 use Rack::MethodOverride
+use ListingController
 run ApplicationController
