@@ -9,30 +9,30 @@ class ListingsController < ApplicationController
      erb :"listings/show"
   end
   
-  get "/cupcakess/new" do
-    erb :"cupcakes/new"
+  get "/listings/new" do
+    erb :"listings/new"
   end
   
-  post "/cupcakes" do
-    cupcake = Cupcake.create(params[:cupcake])
-    redirect '/cupcakess/#{cupcake.id}'  
+  post "/listings" do
+    listing = Listing.create(params[:listing])
+    redirect '/listings/#{listing.id}'  
   end
   
-  get "/cupcakes/:id/edit" do
-    @cupcake = cupcake.find(params[:id])
-    erb :"cupcakes/edit"  
+  get "/listings/:id/edit" do
+    @listing = listing.find(params[:id])
+    erb :"listings/edit"  
   end
   
-  patch "/cupcakes/:id" do
-    cupcake= Cupcake.find(params[:id])
-    cupcake.update(params[:cupcake])
-    redirect "/cupcakes/#{cupcake.id}"  
+  patch "/listings/:id" do
+    listing= Listing.find(params[:id])
+    listing.update(params[:listing])
+    redirect "/listings/#{.id}"  
   end
   
-  delete "/cupcakes/:id" do
-    cupcake = Cupcake.find(params[:id])
-    cupcake.destroy
-    redirect "/cupcake"
+  delete "/listings/:id" do
+    listing = Listing.find(params[:id])
+    listing.destroy
+    redirect "/listing"
   end
   
 end
