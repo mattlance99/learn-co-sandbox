@@ -1,8 +1,8 @@
-<h1>All the Cupcakes your heart could desire</h1>
-<a href="/cupcakes/new">Create new Cupcake</a>
+<h1>All the Listings your heart could desire</h1>
+<a href="/listings/new">Create new Listing</a>
 <ul>
-  <% @cupcakes.each do |cupcake| %>
-     <li><a href="/cupcakes/<%= cupcake.id %>"><%= cupcake.name %>
-     </a> | <li><%= cupcake.price %></li>
+  <% @listing.each do |listing| %>
+     <li><a href="/listings/<%= listing.id %>"><%= listing.name %>
+     </a> | <li><%= listing.price %></li>
 </ul>
 

@@ -1,21 +1,21 @@
-<h1>Edit Cupcake</h1>
+<h1>Edit Listing</h1>
  
-<a href="/cupcakes/<%= @cupcake.id %>">Go back</a>
+<a href="/listings/<%= @listing.id %>">Go back</a>
  
-<form action="/cupcakes/<%= @cupcake.id %>" method="post">
+<form action="/listings/<%= @listing.id %>" method="post">
   <input type="hidden" name="_method" value="patch" />
   <div>
     <label for="">Name:</label>
-    <input type="text" name="cupcake[name]
-    "value="<%= @cupcake.name %>" />  
+    <input type="text" name="listing[name]
+    "value="<%= @listing.name %>" />  
   </div>
   <div>
     <label for="">Price:</label>
     <input type="text" name="cupcake[price]" 
-    "value="<%= @cupcake.price %>" />
+    "value="<%= @listing.price %>" />
   </div>
-  <input type="submit" value="Edit Cupcake" />
+  <input type="submit" value="Edit Listing" />
 </form>
-<form action="/cupcakes/<%= @cupcake.id %>" method="post">
+<form action="/listings/<%= @listing.id %>" method="post">
   <input type="hidden" name="_method" value="delete" />  
-  <input id="mysubmit" type="submit" value="Delete Cupcake" /></form>
+  <input id="mysubmit" type="submit" value="Delete Listing" /></form>
