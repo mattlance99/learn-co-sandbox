@@ -32,11 +32,6 @@ class ApplicationController < Sinatra::Base
     erb :new
   end
   
-  get '/listings' do
-    @listings = Listing.all
-    erb :index
-  end
-	
 	post "/login" do
 		agent = Agent.find_by(:username => params[:username])
 		if agent && agent.authenticate(params[:password])
