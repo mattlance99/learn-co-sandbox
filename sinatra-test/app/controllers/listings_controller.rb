@@ -32,7 +32,7 @@ class ListingsController < ApplicationController
     @listing.title = params[:title]
     @listing.content = params[:content]
     @listing.save
-    redirect to "/articles/#{@article.id}"
+    redirect to "/listings/#{@listing.id}"
   end
   
   delete '/listings/:id/delete' do 
