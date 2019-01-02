@@ -2,8 +2,8 @@ require 'pry'
 
 class ListingsController < ApplicationController
 
-  get '/crazytest' do
-    erb  :'listings/test'
+  get "/listings/new" do
+    erb :"listings/new"
   end
   
 end
