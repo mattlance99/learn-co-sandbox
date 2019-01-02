@@ -36,7 +36,7 @@ class ListingsController < ApplicationController
   end
   
   delete '/listings/:id/delete' do 
-    @listing = Article.find_by_id(params[:id])
+    @listing = Lisitng.find_by_id(params[:id])
     @listing.delete
     redirect to '/lisitngs'
   end
