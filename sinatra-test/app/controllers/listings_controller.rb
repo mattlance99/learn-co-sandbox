@@ -27,12 +27,18 @@ class ListingsController < ApplicationController
     erb :'listings/edit'
   end
  
-  patch '/articles/:id' do #edit action
-  @article = Article.find_by_id(params[:id])
-  @article.title = params[:title]
-  @article.content = params[:content]
-  @article.save
-  redirect to "/articles/#{@article.id}"
-end
+  patch '/listings/:id' do
+    @listing = Listing.find_by_id(params[:id])
+    @listing.title = params[:title]
+    @listing.content = params[:content]
+    @listing.save
+    redirect to "/articles/#{@article.id}"
+  end
+  
+  delete '/listings/:id/delete' do 
+    @listing = Article.find_by_id(params[:id])
+    @listing.delete
+    redirect to '/lisitngs'
+  end
   
 end
