@@ -29,8 +29,10 @@ class ListingsController < ApplicationController
  
   patch '/listings/:id' do
     @listing = Listing.find_by_id(params[:id])
-    @listing.title = params[:title]
-    @listing.content = params[:content]
+    @listing.address = params[:address]
+    @listing.price = params[:price]
+    @listing.bedrooms = params[:bedrooms]
+    @listing.bathrooms = params[:bathrooms]
     @listing.save
     redirect to "/listings/#{@listing.id}"
   end
