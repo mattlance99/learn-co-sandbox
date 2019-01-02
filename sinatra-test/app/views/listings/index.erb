@@ -1,4 +1,14 @@
 <h1>All the Listings your heart could desire</h1>
 <a href="/listings/new">Create new Listing</a>
 
+<% @listings.each do |listing| %>
+<%= listing.price %>
+<%end%>
 
+
+<ul>
+<% @listings.each do |listing| %>
+     <li><a href="/listings/<%= listing.id %>"><%= listing.address %>
+     </a> | <li><%= listing.price %></li>
+     <%end%>
+</ul>
