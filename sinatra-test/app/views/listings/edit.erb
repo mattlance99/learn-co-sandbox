@@ -25,7 +25,7 @@
   </div>
   <input type="submit" value="Edit Listing" />
 </form>
-<form action="/listings/<%= @listing.id %>" method="post">
+<form action="/listings/<%= @listing.id %>/delete" method="post">
   <input type="hidden" name="_method" value="delete" />  
   <input id="mysubmit" type="submit" value="Delete Listing"
 
