@@ -17,4 +17,22 @@ class ListingsController < ApplicationController
     erb :'listings/index'
   end
   
+  get '/listings/:id' do
+    @listing = Listing.find_by_id(params[:id])
+    erb :'listings/show'
+  end
+  
+  get '/listings/:id/edit' do  
+    @listing = Listing.find_by_id(params[:id])
+    erb :'listings/edit'
+  end
+ 
+  patch '/articles/:id' do #edit action
+  @article = Article.find_by_id(params[:id])
+  @article.title = params[:title]
+  @article.content = params[:content]
+  @article.save
+  redirect to "/articles/#{@article.id}"
+end
+  
 end

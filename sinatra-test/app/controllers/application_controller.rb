@@ -38,7 +38,7 @@ class ApplicationController < Sinatra::Base
 			session[:agent_id] = agent.id
 			redirect '/listings'
 		else
-		  "YOU FAILED!!!!!"
+		  erb :failure
 			#redirect "failure"
 		end
 	end
