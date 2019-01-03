@@ -1,11 +1,6 @@
 <h1>All Listings</h1>
 <a href="/listings/new">Create new Listing</a>
 
-<% @listings.each do |listing| %>
-<%= listing.price %>
-<%end%>
-
-
 <ul>
 <% @listings.each do |listing| %>
      <li><a href="/listings/<%= listing.id %>"><%= listing.address %>

@@ -9,5 +9,6 @@ require './config/environment'
 #end
 
 use Rack::MethodOverride
+use SessionsController
 use ListingsController
 run ApplicationController

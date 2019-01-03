@@ -6,10 +6,9 @@ class ListingsController < ApplicationController
     erb :"listings/new"
   end
   
-  post "/listings" do
-    @listing = Listing.create(params[:listing])
-    #redirect '/listings/#{listing.id}'  
-    "Hello!!!"
+  post '/listings' do
+    @listing = Listing.create(:address => params[:address], :price => params[:price], :bedrooms => params[:bedrooms], :bathrooms => params[:bathrooms],:agent_id => params[:agent_id],)
+    redirect to "/listings/#{@listing.id}"
   end
   
   get '/listings' do
